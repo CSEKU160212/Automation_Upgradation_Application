@@ -1,0 +1,39 @@
+ <div>
+           	<h1 style="text-align: center;">List of all employees (Total Employee: {{$totalEmployee}})</h1>
+           	<table class="table">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Name</th>
+				      <th scope="col">Email</th>
+				      <th scope="col">Contact No</th>
+				      <th scope="col">Joining Date</th>
+				      <th scope="col">Last Upgradation</th>
+				      <th scope="col">Role</th>
+				      <th scope="col">Section</th>
+				      <th scope="col">Discipline</th>
+				      <th scope="col">School</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				 <?php $i = 1; ?>
+				 @if (@allEmployees)
+				 @foreach ($allEmployees as $employee)
+				    <tr>
+				      <th scope="row">{{$i}}</th>
+				      <td> {{ $employee->name }} </td>
+				      <td> {{ $employee->email }} </td>
+				      <td> {{ $employee->contact_no }} </td>
+				      <td> {{ $employee->joining_date }} </td>
+				      <td> {{ $employee->upgradation_date }} </td>
+				      <td> {{ $employee->roleName }} </td>
+				      <td> {{ $employee->sectionName }} </td>
+				      <td> {{ $employee->disciplineName }} </td>
+				      <td> {{ $employee->schoolName }} </td>
+				    </tr>
+				   <?php $i += 1; ?>
+				  @endforeach
+				  @endif
+				  </tbody>
+			</table>
+           </div>
