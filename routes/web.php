@@ -38,3 +38,8 @@ Route::POST('/school/delete','SchoolController@delete');
 Route::POST('/schools','SchoolController@create');
 
 
+Route::get('/manageuser', 'ManageuserController@index')->name('manageuser');
+Route::POST('/manageuser/delete','ManageuserController@delete');
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+Route::POST('/admin/delete','AdminController@delete');
